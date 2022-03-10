@@ -1,0 +1,112 @@
+.contenedor_formularios{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 100px;
+}
+
+.contenido_formulario_titulo{
+    font-weight: 600;
+    color: var(--colorSecundario);
+    text-shadow: 2px 2px 10px black;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.contenido{
+    min-height: calc(100vh - 50px);
+    padding: 0 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.contenedor_buscador{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.buscador{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    width: 300px;
+}
+
+.buscador_caja{
+    border:none;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    
+    text-align: center;
+}
+
+.buscador_caja_boton{
+    position: absolute;
+    right: 10px;
+}
+.buscador_caja_boton:hover{
+    cursor:hand;
+}
+
+.contenido_tarjeta{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 70px;
+}
+
+.contenido_centrado{
+    
+    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+    color:var(--colorSecundarioHover)
+}
+
+.contenido_formulario{
+    padding: 150px 0 70px 0;
+}
+
+.contenedor_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.contenedor_form_campo{
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 12px 20px;
+    box-shadow: 2px 4px 6px var(--colorPrincipal);
+    width: 40vh;
+    font-size: 1em;
+}
+
+.contenedor_form_boton{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 12px 20px;
+    background-color: var(--colorPrincipal);
+    color:var(--blanco);
+    font-size: 1.2em;
+    border: 2px solid var(--colorPrincipalHover);
+    box-shadow: 2px 4px 6px var(--colorPrincipalHover);
+    font-weight: 600;
+}
+
+.contenedor_form_boton:hover{
+    background-color: var(--colorSecundario);
+    color:black;
+}

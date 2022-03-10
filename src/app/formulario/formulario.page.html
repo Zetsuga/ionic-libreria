@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>formulario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="contenedor_form" #guardarForm="ngForm">
+    <div class="form-group">
+        <ion-input class="contenedor_form_campo" name="titulo" [(ngModel)]="libro.titulo" #titulo="ngModel" type="text" placeholder="Título" 
+        [ngClass]="{'is-invalid':titulo.invalid && (titulo.dirty || titulo.touched)}" required></ion-input>
+        <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)">
+            <p *ngIf="titulo.errors.required" class="advertencia">El Título es obligatorio</p>
+        </div>
+    </div>
+    <select class="contenedor_form_campo" name="tipo" [(ngModel)]="libro.tipo" #tipo="ngModel">
+        <option value="Tapa Blanda">Tapa Blanda</option>
+        <option value="Tapa Dura">Tapa Dura</option>
+    </select>
+    <div class="form-group">
+        <ion-input class="contenedor_form_campo" name="autor" [(ngModel)]="libro.autor" #autor="ngModel" type="text" placeholder="Autor" 
+        [ngClass]="{'is-invalid':autor.invalid && (autor.dirty || autor.touched)}" required></ion-input>
+        <div *ngIf="autor.invalid && (autor.dirty || autor.touched)">
+            <p *ngIf="autor.errors.required" class="advertencia">El Autor es obligatorio</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <ion-input class="contenedor_form_campo" name="foto" [(ngModel)]="libro.foto" #foto="ngModel" type="text" placeholder="URL Foto" 
+        [ngClass]="{'is-invalid':foto.invalid && (foto.dirty || foto.touched)}" required></ion-input>
+        <div *ngIf="foto.invalid && (foto.dirty || foto.touched)">
+            <p *ngIf="foto.errors.required" class="advertencia">La URL es obligatoria</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <ion-input class="contenedor_form_campo" name="precio" [(ngModel)]="libro.precio" #precio="ngModel" type="text" placeholder="Precio" 
+        [ngClass]="{'is-invalid':precio.invalid && (precio.dirty || precio.touched)}" required></ion-input>
+        <div *ngIf="precio.invalid && (precio.dirty || precio.touched)">
+            <p *ngIf="precio.errors.required" class="advertencia">El precio es obligatoria</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <ion-button class="contenedor_form_boton" (click)="guardarLibro(guardarForm)" [disabled]="!guardarForm.valid">GUARDAR</ion-button>
+        <ion-button class="contenedor_form_boton" (click)="modificarLibro(guardarForm)" [disabled]="!guardarForm.valid">MODIFICAR</ion-button>
+        <ion-button class="contenedor_form_boton" (click)="borrarLibro(libro.id_libro)" [disabled]="!guardarForm.valid">ELIMINAR</ion-button>
+    </div>
+</form>
+<ion-button color="secondary" expand="block" routerLink="/">Regresar</ion-button>
+</ion-content>
